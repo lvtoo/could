@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: api-gateway
+server:
+  port: 8798
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8800/eureka/
+zuul:
+  routes:
+    serviceA:
+      path: /a/**
+      serviceId: compute-service
+    serviceB:
+      path: /b/**
+      serviceId: compute-service

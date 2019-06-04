@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: compute-service
+server:
+  port: 8900
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8700/eureka/

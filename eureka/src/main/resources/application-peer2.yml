@@ -1,0 +1,14 @@
+server:
+  port: 8702
+
+eureka:
+  instance:
+    hostname: peer2
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://peer0:8700/eureka/,http://peer1:8701/eureka/
+spring:
+  application:
+    name: eureka-service
