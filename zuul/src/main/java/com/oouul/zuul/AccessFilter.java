@@ -31,7 +31,9 @@ public class AccessFilter extends ZuulFilter {
     public Object run() {
         RequestContext context = RequestContext.getCurrentContext();
         HttpServletRequest request = context.getRequest();
+
         logger.info(String.format("%s request to %s", request.getMethod(), request.getRequestURL().toString()));
+
         Object accessToken = request.getParameter("accessToken");
         if (accessToken == null){
             logger.warn("access token is empty");
@@ -40,6 +42,7 @@ public class AccessFilter extends ZuulFilter {
             context.setResponseBody("你尚未登录，请登录后重试。");
             return null;
         }
+        logger.info("access token ok");
         return null;
     }
 }

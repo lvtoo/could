@@ -5,10 +5,9 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/lvtoo/could/
-          search-paths: config-repo
-          username: username
-          password: password
+          uri: https://github.com/lvtoo/could/tree/master/config-repo
+
+
 server:
   port: 8799
 

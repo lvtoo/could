@@ -1,9 +1,9 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8800/eureka/
+      defaultZone: http://localhost:8700/eureka/,http://locakhost:8701/eureka/,http://locakhost:8702/eureka/
 server:
-  port: 8811
+  port: 8810
 spring:
   application:
     name: ribbon-consumer

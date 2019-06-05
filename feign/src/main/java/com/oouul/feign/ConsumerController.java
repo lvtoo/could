@@ -1,16 +1,16 @@
 package com.oouul.feign;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 public class ConsumerController {
-    @Autowired
-    ComputeClient computeClient;
 
-    @GetMapping("/add")
-    public Integer add(){
-        return  computeClient.add(10,20);
+    @PostMapping(value = "/uploadFile", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public String handleFileUpload(@RequestPart(value = "file") MultipartFile file){
+        return file.getName();
     }
 }

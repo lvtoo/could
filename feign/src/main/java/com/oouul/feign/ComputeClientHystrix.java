@@ -12,4 +12,8 @@ public class ComputeClientHystrix implements ComputeClient {
                        @RequestParam(value = "b") Integer b) {
         return -9999;
     }
+    @Override
+    public String sayHello(){
+        return "Hello";
+    }
 }

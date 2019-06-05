@@ -1,18 +1,14 @@
 spring:
   application:
     name: api-gateway
+
 server:
-  port: 8798
+  port: 8600
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8800/eureka/
+      defaultZone: http://localhost:8700/eureka/,http://locakhost:8701/eureka/,http://locakhost:8702/eureka/
 zuul:
   routes:
-    serviceA:
-      path: /a/**
-      serviceId: compute-service
-    serviceB:
-      path: /b/**
-      serviceId: compute-service
+    compute-service: /a/**

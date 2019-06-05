@@ -6,7 +6,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://peer0:8700/eureka/
+      defaultZone: http://localhost:8700/eureka/,http://locakhost:8701/eureka/,http://locakhost:8702/eureka/
 
 feign:
   hystrix:
